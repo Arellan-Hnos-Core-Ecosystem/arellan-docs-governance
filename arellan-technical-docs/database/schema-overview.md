@@ -1,0 +1,1 @@
+explicacion general del modelo de datos

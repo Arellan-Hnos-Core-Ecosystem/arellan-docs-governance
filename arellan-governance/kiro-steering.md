@@ -1,0 +1,1 @@
+sterring file para Kiro (convenciones del proyecto)

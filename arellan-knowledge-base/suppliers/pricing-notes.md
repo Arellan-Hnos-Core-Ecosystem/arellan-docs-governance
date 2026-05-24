@@ -1,0 +1,1 @@
+notas sobre imágenes y comisiones aprobadas

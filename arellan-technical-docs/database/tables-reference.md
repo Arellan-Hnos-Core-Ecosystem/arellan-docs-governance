@@ -1,0 +1,1 @@
+Cada tabla con sus campos y tipos 

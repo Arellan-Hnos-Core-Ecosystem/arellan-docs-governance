@@ -1,0 +1,1 @@
+que variables existen (sin valores reales)
