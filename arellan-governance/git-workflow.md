@@ -15,6 +15,10 @@ Every repository within the 13-tier architecture must maintain the following bra
 - `hotfix/[incident-ticket-id]`: Immediate production patches bypassing staging but back-merged retroactively.
 
 ## 3. The Commit and Peer-Review Lifecycle
+
+[feature Branch] ──> Create Pull Request ──> Peer Review (1 Approval) ──> Merge into develop ──> Deploy to Staging
+
+
 1. **Local Development Boundaries:** No developer is permitted to work locally or commit directly on `main`, `staging`, or `develop`.
 2. **Semantic Commit Standards:** Every commit message must parse correctly through standard changelog generators:
     - `feat([domain]):` A new business feature (e.g., `feat(finance): add double-entry ledger validation`).
