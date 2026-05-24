@@ -1,0 +1,1 @@
+como aprobar/rechazar gastos desde el movil

@@ -1,0 +1,1 @@
+ESlint rules, Prettier, reglas NestJS/NextJS

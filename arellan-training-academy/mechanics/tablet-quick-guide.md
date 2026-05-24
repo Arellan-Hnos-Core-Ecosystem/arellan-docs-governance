@@ -1,0 +1,1 @@
+como usar el tablet del taller (1 pagina para los mecanicos del taller)

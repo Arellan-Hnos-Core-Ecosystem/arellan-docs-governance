@@ -1,0 +1,1 @@
+Qué debe tener un PR antes de aprobar

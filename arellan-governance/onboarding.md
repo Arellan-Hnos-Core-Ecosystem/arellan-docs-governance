@@ -1,0 +1,1 @@
+Guía para un tercer dev que se una 

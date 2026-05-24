@@ -1,0 +1,1 @@
+indices criticos del negocio

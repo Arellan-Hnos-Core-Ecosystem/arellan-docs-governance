@@ -1,0 +1,34 @@
+# .cursorrules — Arellan Hnos Core Ecosystem
+
+## Proyecto
+Sistema ERP para Clínica Automotriz Arellan Hnos, Lima, Perú.
+Negocio familiar con taller automotriz. Ver arellan-docs-governance para contexto completo.
+
+## Stack
+- Backend: NestJS + TypeScript + Prisma + PostgreSQL + Redis
+- Frontend admin: Next.js 14 App Router + Tailwind + Zustand
+- Mobile: Next.js PWA + next-pwa
+- Mechanic UI: React + Vite (optimizado para tablet táctil)
+- Client portal: Next.js con SSR y SEO
+
+## Convenciones de código
+- Idioma del código: Español (variables, funciones, clases)
+- Idioma de comentarios: español (el equipo es hispanohablante)
+- NestJS: un módulo por dominio de negocio (vehicles, finance, employees, etc.)
+- Nombres de archivos: kebab-case para archivos, PascalCase para clases
+- DTOs siempre validados con class-validator
+- Nunca usar `any` en TypeScript
+- Siempre manejar errores con try/catch y respuestas estándar ApiResponse<T>
+
+## Seguridad (crítico)
+- Todo endpoint protegido con @UseGuards(JwtAuthGuard, RolesGuard)
+- Módulo finance/: cobertura mínima de tests 85%
+- Nunca loguear información financiera o datos personales
+- Inputs siempre sanitizados antes de llegar a la base de datos
+
+## Contexto de negocio
+- Los hermanos (Edgar, Juan, Ana) son los únicos con rol OWNER
+- Los mecánicos tienen acceso solo a vehicles e inventory
+- La hija tiene rol FINANCE con acceso a finance y reports
+- Toda salida de dinero requiere aprobación de al menos un hermano
+- Los vehículos registrados son de clientes, nunca del taller

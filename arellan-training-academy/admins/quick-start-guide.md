@@ -1,0 +1,1 @@
+primeros pasos en el sistema (Edgar, Juan, Ana u otros usuarios de rol admin)

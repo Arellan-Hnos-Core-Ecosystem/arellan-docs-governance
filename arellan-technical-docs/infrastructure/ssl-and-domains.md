@@ -1,0 +1,1 @@
+dominios por productos y certificados

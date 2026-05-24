@@ -1,0 +1,1 @@
+como preparar reportes para auditoría
