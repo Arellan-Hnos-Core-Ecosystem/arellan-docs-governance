@@ -1,34 +1,43 @@
 # .cursorrules — Arellan Hnos Core Ecosystem
 
-## Proyecto
-Sistema ERP para Clínica Automotriz Arellan Hnos, Lima, Perú.
-Negocio familiar con taller automotriz. Ver arellan-docs-governance para contexto completo.
+## Project
+ERP System for Arellan Hnos Automotive Clinic, Lima, Peru.
+Family business with an automotive workshop. See arellan-docs-governance for complete context.
 
 ## Stack
 - Backend: NestJS + TypeScript + Prisma + PostgreSQL + Redis
 - Frontend admin: Next.js 14 App Router + Tailwind + Zustand
 - Mobile: Next.js PWA + next-pwa
-- Mechanic UI: React + Vite (optimizado para tablet táctil)
-- Client portal: Next.js con SSR y SEO
+- Mechanic UI: React + Vite (optimized for touch tablets)
+- Client portal: Next.js with SSR and SEO
 
-## Convenciones de código
-- Idioma del código: Español (variables, funciones, clases)
-- Idioma de comentarios: español (el equipo es hispanohablante)
-- NestJS: un módulo por dominio de negocio (vehicles, finance, employees, etc.)
-- Nombres de archivos: kebab-case para archivos, PascalCase para clases
-- DTOs siempre validados con class-validator
-- Nunca usar `any` en TypeScript
-- Siempre manejar errores con try/catch y respuestas estándar ApiResponse<T>
+## Coding Conventions
+- Code language: English (variables, functions, classes)
+- Comment language: Spanish (the team is Spanish-speaking)
+- NestJS: one module per business domain (vehicles, finance, employees, etc.)
+- File names: kebab-case for files, PascalCase for classes
+- DTOs always validated with class-validator
+- Never use `any` in TypeScript
+- Always handle errors with try/catch blocks and standard ApiResponse<T> responses
 
-## Seguridad (crítico)
-- Todo endpoint protegido con @UseGuards(JwtAuthGuard, RolesGuard)
-- Módulo finance/: cobertura mínima de tests 85%
-- Nunca loguear información financiera o datos personales
-- Inputs siempre sanitizados antes de llegar a la base de datos
+## Security (critical)
+- All endpoints protected with @UseGuards(JwtAuthGuard, RolesGuard)
+- Finance module: minimum test coverage 85%
+- Never log financial information or personal data
+- Inputs are always sanitized before reaching the database
 
-## Contexto de negocio
-- Los hermanos (Edgar, Juan, Ana) son los únicos con rol OWNER
-- Los mecánicos tienen acceso solo a vehicles e inventory
-- La hija tiene rol FINANCE con acceso a finance y reports
-- Toda salida de dinero requiere aprobación de al menos un hermano
-- Los vehículos registrados son de clientes, nunca del taller
+## Business Context
+- The siblings (Edgar, Juan, Ana) are the only ones with the OWNER role
+- The mechanics only have access to vehicles and inventory
+- The daughter has the FINANCE role with access to finance and reports
+- All cash outflows require approval from at least one sibling
+- Registered vehicles belong to customers, never to the workshop
+
+## Strict Coding Standards
+- **Naming Conventions:** Everything must be generic (e.g., `WorkshopCore`, `MechanicController`, `CashboxRegistry`). NEVER hardcode client names like "Arellan Hnos" or developer names into code or namespaces.
+- **Security Principle of Least Privilege:** Every endpoint must explicitly enforce an authorization guard (e.g., `@Roles(Role.Owner, Role.Finance)`).
+- **Anti-Fraud Audit Trail:** Any mutation operation (CREATE, UPDATE, DELETE) on financial or inventory records MUST trigger an immutable log entry through the `AuditLogService`.
+
+## Git Mandates (Plan B - Discipline-Enforced)
+- Direct pushes to `main` are strictly prohibited by code of honor.
+- Every feature must be developed in `feature/*` and merged into `develop` via a Pull Request reviewed by the partner developer.
